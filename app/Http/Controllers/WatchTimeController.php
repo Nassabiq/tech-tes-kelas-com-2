@@ -36,14 +36,14 @@ class WatchTimeController extends Controller
         $revenueShares = $classWatchTimes->map(function($item) use ($netRevenue, $totalWatchTime) {
             $class = Classes::find($item->class_id);
             $mentor = $class->mentor;
-            $percentage = $item->total_duration / $totalWatchTime;
-            $share = $netRevenue * $percentage;
+            $persentase = $item->total_duration / $totalWatchTime;
+            $share = $netRevenue * $persentase;
 
             return [
                 'mentor' => $mentor->name,
                 'class' => $class->title,
                 'watch_time' => $item->total_duration,
-                'percentage' => $percentage,
+                'persentase' => $persentase,
                 'share' => $share
             ];
         });
