@@ -19,8 +19,7 @@ class WatchTimeController extends Controller
         ]);
 
         WatchTime::create($request->all());
-
-        return response()->json(['message' => 'Watch time recorded successfully'], 200);
+        return response()->json(['message' => 'Waktu Tonton Berhasil Direkam'], 200);
     }
 
     public function revenueShare()
